@@ -1,6 +1,7 @@
 // screens/SignUp.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { Auth } from 'aws-amplify';
 
 export default function SignUpScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -9,7 +10,8 @@ export default function SignUpScreen({ navigation }) {
   const handleSignUp = async () => {
     // Save user info securely
     try {
-      navigation.navigate('LogIn');
+      await Auth.signUp({username: email, password, attributes: { email } });
+      navigation.navigate('ConfirmSignUp', {email});
     } catch (e) {
       console.error(e);
     }

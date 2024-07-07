@@ -1,6 +1,7 @@
 // screens/Login.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { Auth } from 'aws-amplify';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -8,6 +9,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = async () => {
     try {
+      await Auth.signIn(email, password);
       navigation.navigate('Home');
     } catch (e) {
       console.error(e);
