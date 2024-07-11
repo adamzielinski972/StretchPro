@@ -38,19 +38,19 @@ function App() {
 
   const MainStack = () => (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="LogIn" component={LogInScreen} />
-      <Stack.Screen name="SignUp" component={SignUpScreen} />
-      <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUpScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="LogIn" component={LogInScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUpScreen} options={{headerShown : false}}/>
     </Stack.Navigator>
   );
 
   const AuthStack = () => (
     <Stack.Navigator>
-      <Stack.Screen name="LogIn" component={LogInScreen} />
-      <Stack.Screen name="SignUp" component={SignUpScreen} />
-      <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUpScreen} />
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="LogIn" component={LogInScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUpScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="Home" component={HomeScreen} options={{headerShown : false}}/>
     </Stack.Navigator>
   );
   
