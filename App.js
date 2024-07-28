@@ -7,12 +7,15 @@ import SignUpScreen from './assets/pages/SignUpScreen';
 import LogInScreen from './assets/pages/LogInScreen';
 import HomeScreen from './assets/pages/HomeScreen';
 import ConfirmSignUpScreen from './assets/pages/ConfirmSignUpScreen';
+import SettingsScreen from './assets/pages/SettingsScreen';
+import HipsOptionsScreen from './assets/pages/HipsOptionsScreen';
+import Hips1Screen from './assets/pages/Hips1Screen';
+import Hips1StretchScreen from './assets/pages/Hips1StretchScreen';
 
 import { Amplify } from 'aws-amplify';
 import amplifyconfig from './src/amplifyconfiguration.json';
 import { Auth } from 'aws-amplify';
 Amplify.configure(amplifyconfig);
-
 
 
 const Stack = createStackNavigator();
@@ -42,6 +45,10 @@ function App() {
       <Stack.Screen name="LogIn" component={LogInScreen} options={{headerShown : false}}/>
       <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown : false}}/>
       <Stack.Screen name="ConfirmSignUp" component={ConfirmSignUpScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="Settings" component={SettingsScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="HipsOptions" component={HipsOptionsScreen} options={{headerShown : false}}/>
+      <Stack.Screen name="Hips1" component={Hips1Screen} options={{headerShown : false}}/>
+      <Stack.Screen name="Hips1Stretch" component={Hips1StretchScreen} options={{headerShown : false}}/>
     </Stack.Navigator>
   );
 
