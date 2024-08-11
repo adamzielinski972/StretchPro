@@ -5,3 +5,5 @@
 "Icons made by Phoenix Group from www.flaticon.com"
 "Icons made by IcoGhost from www.flaticon.com"
 "Icons made by Any Icon from www.flaticon.com"
+"Icons made by Kirill Kazachek from www.flaticon.com"
+"Icons made by bqlqn from www.flaticon.com"

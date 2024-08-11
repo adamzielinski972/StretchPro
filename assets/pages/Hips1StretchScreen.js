@@ -15,25 +15,52 @@ const RPH = (percentage) => {
 }
 
 const activities = [
-  { label: 'Lunge', time: 10, image: require('./images/Lunge.png'), index: '1 of 6' },
+  { label: 'Lunge', time: 30, image: require('./images/Lunge.png'), index: '1 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '1 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '1 of 6' },
+  { label: 'Lunge', time: 30, image: require('./images/Lunge.png'), index: '1 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '1 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '1 of 6' },
-  { label: 'Reverse Lunge', time: 10, image: require('./images/Reverse-Lunge.png'), index: '2 of 6' },
+  { label: 'Lunge', time: 30, image: require('./images/Lunge.png'), index: '1 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '1 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '1 of 6' },
+  { label: 'Lunge', time: 30, image: require('./images/Lunge.png'), index: '1 of 6' },
+  { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '1 of 6' },
+  { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '1 of 6' },
+  { label: 'Reverse Lunge', time: 30, image: require('./images/Reverse-Lunge.png'), index: '2 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '2 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '2 of 6' },
+  { label: 'Reverse Lunge', time: 30, image: require('./images/Reverse-Lunge.png'), index: '2 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '2 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '2 of 6' },
-  { label: 'Butterfly', time: 10, image: require('./images/Butterfly.png'), index: '3 of 6' },
+  { label: 'Reverse Lunge', time: 30, image: require('./images/Reverse-Lunge.png'), index: '2 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '2 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '2 of 6' },
+  { label: 'Reverse Lunge', time: 30, image: require('./images/Reverse-Lunge.png'), index: '2 of 6' },
+  { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '2 of 6' },
+  { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '2 of 6' },
+  { label: 'Butterfly', time: 30, image: require('./images/Butterfly.png'), index: '3 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '3 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '3 of 6' },
-  { label: 'Lying Figure Four', time: 10, image: require('./images/Lying-Figure-Four.png'), index: '4 of 6' },
+  { label: 'Lying Figure Four', time: 30, image: require('./images/Lying-Figure-Four.png'), index: '4 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '4 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '4 of 6' },
+  { label: 'Lying Figure Four', time: 30, image: require('./images/Lying-Figure-Four.png'), index: '4 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '4 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '4 of 6' },
-  { label: 'Quad Stretch', time: 10, image: require('./images/Quad-Stretch.png'), index: '5 of 6' },
+  { label: 'Quad Stretch', time: 30, image: require('./images/Quad-Stretch.png'), index: '5 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '5 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '5 of 6' },
+  { label: 'Quad Stretch', time: 30, image: require('./images/Quad-Stretch.png'), index: '5 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '5 of 6' },
   { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '5 of 6' },
-  { label: 'Spinal Twist', time: 10, image: require('./images/Spinal-Twist.png'), index: '6 of 6' },
-  // Add more activities as needed
+  { label: 'Spinal Twist', time: 30, image: require('./images/Spinal-Twist.png'), index: '6 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '6 of 6' },
+  { label: 'Switch Sides', time: 5, image: require('./images/swap.png'), index: '6 of 6' },
+  { label: 'Spinal Twist', time: 30, image: require('./images/Spinal-Twist.png'), index: '6 of 6' },
+  { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '6 of 6' },
+  { label: 'Next Stretch', time: 5, image: require('./images/next.png'), index: '6 of 6' },
 ];
-
 const Hips1StretchScreen = ({ navigation }) => {
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -117,7 +144,7 @@ const Hips1StretchScreen = ({ navigation }) => {
           key={timerKey} // Force reset of the timer
           isPlaying={!isPaused && !showCountdown}
           duration={currentActivity.time}
-          colors={['#00e0ff', '#ff0', '#ff0000']}
+          colors={['#94928f', '#94928f', '#94928f']}
           colorsTime={[10, 5, 0]}
           onComplete={handleComplete}
           size={300}
@@ -211,11 +238,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: 190,
-    height: 190,
+    width: RPH(33),
+    height: RPH(33),
+    borderRadius: 150
   },
   darkenedImage: {
-    opacity: 0.5, // Darken the image
+    opacity: 0.5, 
   },
   stretchTitleContainer: {
     alignItems: 'center',
@@ -271,7 +299,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Dark overlay
+    backgroundColor: 'rgba(0, 0, 0, 0.7)', 
     zIndex: 1,
   },
 });

@@ -12,12 +12,12 @@ const RPH = (percentage) => {
   return (percentage / 100) * screenHeight;
 }
 
-const StretchOption = ({ image, title, length, onPress , offsetX, offsetY, colourBG}) => {
+const StretchOption = ({ image, title, length, onPress }) => {
   return (
     <TouchableOpacity style={styles.stretchOption} onPress={onPress}>
           <View style={styles.stretchOptionImageContainerContainer}>
-            <View style={[styles.stretchOptionImageContainer, {backgroundColor: colourBG}]}>
-              <Image style={[styles.stretchOptionImage, {marginLeft: offsetX, marginTop: offsetY}]} source={image}/>
+            <View style={styles.stretchOptionImageContainer}>
+              <Image style={styles.stretchOptionImage} source={image}/>
             </View>
           </View>
           <View style={styles.stretchOptionTexts}>
@@ -51,13 +51,13 @@ export default function HipsOptionsScreen({ navigation }) {
         </View>
       </View>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
-        <StretchOption image={require('./images/Lunge.png')} title="Hips 1" length={"5 MINUTES"} onPress={()=> navigation.navigate('Hips1')} offsetX={RPW(1)} colourBG={"#8bbb8b"}/>
-        <StretchOption image={require('./images/Lunge.png')} title="Hips 2" length={"10 MINUTES"}  offsetX={RPW(1)} colourBG={"#1d26bd"}/>
-        <StretchOption image={require('./images/Lunge.png')} title="Hips 3" length={"15 MINUTES"} offsetX={RPW(1)} colourBG={"#c9a7c9"}/>
-        <StretchOption image={require('./images/Lunge.png')} title="Hips 4" length={"20 MINUTES"} offsetX={RPW(1)} colourBG={"#d8aa3d"}/>
-        <StretchOption image={require('./images/Reverse-Lunge.png')} title="Hips 5" length={"6 MINUTES"} offsetX={RPW(1)} offsetY={RPW(-3)} colourBG={"#054d54"}/>
-        <StretchOption image={require('./images/Lunge.png')} title="Hips 6" length={"5 MINUTES"} offsetX={RPW(1)} colourBG={"#6d0202"}/>
-        <StretchOption image={require('./images/Lunge.png')} title="Hips 7" length={"5 MINUTES"} offsetX={RPW(1)} colourBG={"#af5204"}/>
+        <StretchOption image={require('./images/Lunge.png')} title="Hips 1" length={"5 MINUTES"} onPress={()=> navigation.navigate('Hips1')} />
+        <StretchOption image={require('./images/Side-Lunge.png')} title="Hips 2" length={"10 MINUTES"} onPress={()=> navigation.navigate('Hips2')} />
+        <StretchOption image={require('./images/Standing-Frog.png')} title="Hips 3" length={"15 MINUTES"} onPress={()=> navigation.navigate('Hips3')}/>
+        <StretchOption image={require('./images/Frog-Pose.png')} title="Hips 4" length={"20 MINUTES"} onPress={()=> navigation.navigate('Hips4')}/>
+        <StretchOption image={require('./images/Reverse-Lunge.png')} title="Hips 5" length={"6 MINUTES"} onPress={()=> navigation.navigate('Hips5')}/>
+        <StretchOption image={require('./images/Pigeon.png')} title="Hips 6" length={"5 MINUTES"} onPress={()=> navigation.navigate('Hips6')}/>
+        <StretchOption image={require('./images/Happy-Baby.png')} title="Hips 7" length={"5 MINUTES"} onPress={()=> navigation.navigate('Hips7')}/>
       </ScrollView>
     </SafeAreaView>
   );
@@ -145,8 +145,9 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   stretchOptionImage: {
-    width: RPH(6),
-    height: RPH(6),
+    width: RPH(8),
+    height: RPH(8),
+    borderRadius: 50,
   },
   stretchOptionTexts: {
     flexDirection: 'column',

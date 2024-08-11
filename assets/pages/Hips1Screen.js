@@ -24,12 +24,12 @@ export default function Hips1Screen({ navigation }) {
     }
   }
 
-  const Stretch = ({ image, title, length, onPress , offsetX, offsetY, colourBG}) => {
+  const Stretch = ({ image, title, length, onPress }) => {
     return (
       <TouchableOpacity onPress={onPress}>
         <View style={styles.stretch}>
-          <View style={[styles.stretchImageContainer, {backgroundColor: colourBG}]}>
-            <Image style={[styles.stretchImage, , {marginLeft: offsetX, marginTop: offsetY}]} source={image} />
+          <View style={styles.stretchImageContainer}>
+            <Image style={styles.stretchImage} source={image} />
           </View>
           <View style={styles.stretchTexts}>
             <Text style={styles.stretchTitle}>{title}</Text>
@@ -40,7 +40,7 @@ export default function Hips1Screen({ navigation }) {
     );
   };
 
-  const PopUp = ({ image, title, instructions , offsetX, offsetY, colourBG}) => {
+  const PopUp = ({ image, title, instructions }) => {
     return (
       <Modal
         animationType="slide"
@@ -48,7 +48,6 @@ export default function Hips1Screen({ navigation }) {
         visible={modalVisible}
         onRequestClose={() => setModalVisible(false)}
       >
-        
           <View style={styles.popUp}>
             <View style={styles.popUpTitleContainer}>
               <Text style={styles.popUpTitle}>{title}</Text>
@@ -58,8 +57,8 @@ export default function Hips1Screen({ navigation }) {
             </View>
             <ScrollView style={{paddingBottom: RPH(10)}}>
               <View  style={{alignItems: 'center'}}>
-                <View style={[styles.popUpImageContainer, {backgroundColor: colourBG}]}>
-                  <Image style={[styles.popUpImage, {marginLeft: offsetX, marginTop: offsetY}]} source={image} />
+                <View style={styles.popUpImageContainer}>
+                  <Image style={styles.popUpImage} source={image} />
                 </View>
               </View>
               <View style={styles.popUpTextContainer}>
@@ -93,12 +92,12 @@ export default function Hips1Screen({ navigation }) {
       </View>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <PopUp image={currentPopup.image} title={currentPopup.title} instructions={currentPopup.instructions} offsetX={currentPopup.offsetX} offsetY={currentPopup.offsetY} colourBG={currentPopup.colourBG} />
-        <Stretch image={require('./images/Lunge.png')} title="Lunge" length={"0:30"} onPress={() => handlePress(require('./images/Lunge.png'), "Lunge", "Start from a kneeling position with your hands at your sides. Step your left leg forward and position your left knee directly over your left ankle. Raise your arms above your head and shift your hips forward to deepend the lunge.", RPW(3), RPW(0), "#8bbb8b")} offsetX={RPW(2)} colourBG={"#8bbb8b"}/>
-        <Stretch image={require('./images/Reverse-Lunge.png')} title="Reverse Lunge" length={"1:00"} onPress={() => handlePress(require('./images/Reverse-Lunge.png'), "Reverse-Lunge", "Starting from a kneeling position, extend your right foot forward in front of you so your right leg is straight and resting on your right heel. Keep your back straight while gently folding forward over your right leg to further the stretch in your hamstring. Rest your hands on the floor to maintain stability and balance." , RPW(2), RPW(-5), "#054d54")} offsetX={RPW(2)} colourBG={"#054d54"}/>
-        <Stretch image={require('./images/Butterfly.png')} title="Butterfly" length={"0:30"} onPress={() => handlePress(require('./images/Butterfly.png'), "Butterfly", "Sitting on the floor with your back straight, bend your knees and drop your legs to the sides so the soles of your feet come together. Grab your feet and ankles and lean forward, keeping your spine straight." , RPW(2), RPW(2), "#caa3ea")} offsetX={RPW(2)} offsetY={RPW(2)} colourBG={"#caa3ea"}/>
-        <Stretch image={require('./images/Lying-Figure-Four.png')} title="Lying Figure Four" length={"1:00"} onPress={() => handlePress(require('./images/Lying-Figure-Four.png'), "Lying Figure Four", "Lying on your back with knees bent and feet flat on the floor, cross your left ankle over your right knee and grab the back of the right knee with both hands. Pull your right leg towards your chest while keeping your lower back on the floor." , RPW(2), RPW(2), "#b15905")} offsetX={RPW(2)} offsetY={RPW(1)} colourBG={"#b15905"}/>
-        <Stretch image={require('./images/Quad-Stretch.png')} title="Quad Stretch" length={"1:00"} onPress={() => handlePress(require('./images/Quad-Stretch.png'), "Quad Stretch", "Start standing and bend your left knee back behind you. Grab it with your left arm and try to pull it back behind you." , RPW(2), RPW(5), "#b12f05")} offsetX={RPW(3)} offsetY={RPW(2)} colourBG={"#b12f05"}/>
-        <Stretch image={require('./images/Spinal-Twist.png')} title="Spinal Twist" length={"0:30"} onPress={() => handlePress(require('./images/Spinal-Twist.png'), "Spinal Twist", "Starting flat on your back, shift your hips to the right and your right leg over your left, placing your left hand on the outside of your right knee." , RPW(0), RPW(7), "#474eb7")} offsetX={RPW(1)} offsetY={RPW(2)} colourBG={"#474eb7"}/>
+        <Stretch image={require('./images/Lunge.png')} title="Lunge" length={"1:00"} onPress={() => handlePress(require('./images/Lunge.png'), "Lunge", "Start from a kneeling position with your hands at your sides. Step your left leg forward and position your left knee directly over your left ankle. Raise your arms above your head and shift your hips forward to deepend the lunge.")}/>
+        <Stretch image={require('./images/Reverse-Lunge.png')} title="Reverse Lunge" length={"1:00"} onPress={() => handlePress(require('./images/Reverse-Lunge.png'), "Reverse-Lunge", "Starting from a kneeling position, extend your right foot forward in front of you so your right leg is straight and resting on your right heel. Keep your back straight while gently folding forward over your right leg to further the stretch in your hamstring. Rest your hands on the floor to maintain stability and balance." )} />
+        <Stretch image={require('./images/Butterfly.png')} title="Butterfly" length={"0:30"} onPress={() => handlePress(require('./images/Butterfly.png'), "Butterfly", "Sitting on the floor with your back straight, bend your knees and drop your legs to the sides so the soles of your feet come together. Grab your feet and ankles and lean forward, keeping your spine straight." )} />
+        <Stretch image={require('./images/Lying-Figure-Four.png')} title="Lying Figure Four" length={"1:00"} onPress={() => handlePress(require('./images/Lying-Figure-Four.png'), "Lying Figure Four", "Lying on your back with knees bent and feet flat on the floor, cross your left ankle over your right knee and grab the back of the right knee with both hands. Pull your right leg towards your chest while keeping your lower back on the floor." )} />
+        <Stretch image={require('./images/Quad-Stretch.png')} title="Quad Stretch" length={"1:00"} onPress={() => handlePress(require('./images/Quad-Stretch.png'), "Quad-Stretch", "Start sitting on the floor with your legs extended straight out in front of you. Bend your knee and grab your foot to bring it back behind you, placing your foot directly underneath your buttocks. Gently lean back to rest on your elbows." )} />
+        <Stretch image={require('./images/Spinal-Twist.png')} title="Spinal Twist" length={"1:00"} onPress={() => handlePress(require('./images/Spinal-Twist.png'), "Spinal Twist", "Starting flat on your back, shift your hips to the right and your right leg over your left, placing your left hand on the outside of your right knee." )} />
       </ScrollView>
       <TouchableOpacity style={styles.startButton} onPress={() => navigation.navigate('Hips1Stretch')}>
         <View style={styles.startButtonTextContainer}>
@@ -174,8 +173,9 @@ const styles = StyleSheet.create({
     borderRadius: 75,
   },
   stretchImage: {
-    width: RPH(8),
-    height: RPH(8),
+    width: RPH(10),
+    height: RPH(10),
+    borderRadius: 75,
   },
   stretchTexts: {
     flexDirection: 'row',
@@ -259,8 +259,9 @@ const styles = StyleSheet.create({
     height: RPW(60),
   },
   popUpImage: {
-    width: RPW(50),
-    height: RPW(50),
+    width: RPW(60),
+    height: RPW(60),
+    borderRadius: 150,
   },
   popUpTextContainer: {
     marginTop: RPH(2),
@@ -285,6 +286,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   startButtonText: {
-    color: 'black'
+    color: 'grey',
+    fontWeight: 'bold'
   }
 });

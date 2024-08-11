@@ -36,6 +36,7 @@ const Card = ({length, title, image, onPress }) => {
 const SuggestionScroll = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const scrollViewRef = useRef(null);
+  const navigation = useNavigation();
 
   const handleScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { x: scrollX } } }],
@@ -72,9 +73,9 @@ const SuggestionScroll = () => {
         }}
         contentOffset={{ x: -SPACING_FOR_CARD_INSET }}
       >
-        <Card length="5 MINUTES" title="Wake Up" image={require('./images/cat.jpg')} onPress={() => scrollToCard(0)} />
-        <Card length="15 MINUTES" title="Full Body" image={require('./images/cat.jpg')} onPress={() => scrollToCard(1)} />
-        <Card length="10 MINUTES"title="Sleep" image={require('./images/cat.jpg')} onPress={() => scrollToCard(2)} />
+        <Card length="5 MINUTES" title="Wake Up" image={require('./images/Wake-Up.png')} onPress={() => navigation.navigate('WakeUp')} />
+        <Card length="15 MINUTES" title="Full Body" image={require('./images/Full-Body.png')} onPress={() => navigation.navigate('FullBody')} />
+        <Card length="10 MINUTES"title="Sleep" image={require('./images/Sleep.png')} onPress={() => navigation.navigate('Sleep')} />
       </Animated.ScrollView>
     </View>
   );
@@ -85,15 +86,15 @@ const BBAScroll = () => {
 
   const cards = [
     { id: 1, image: require('./images/Butterfly.png'), text: 'Hips', screen: 'HipsOptions' },
-    { id: 2, image: require('./images/Butterfly.png'), text: 'Lower Back' , screen: 'HipsOptions'},
-    { id: 3, image: require('./images/Butterfly.png'), text: 'Hamstrings' , screen: 'HipsOptions'},
-    { id: 4, image: require('./images/Butterfly.png'), text: 'Quadriceps' , screen: 'HipsOptions'},
-    { id: 5, image: require('./images/Butterfly.png'), text: 'Upper Body' , screen: 'HipsOptions'},
-    { id: 6, image: require('./images/Butterfly.png'), text: 'Shoulders' , screen: 'HipsOptions'},
-    { id: 7, image: require('./images/Butterfly.png'), text: 'Neck' , screen: 'HipsOptions'},
-    { id: 8, image: require('./images/Butterfly.png'), text: 'Posture' , screen: 'HipsOptions'},
-    { id: 9, image: require('./images/Butterfly.png'), text: 'Chest' , screen: 'HipsOptions'},
-    { id: 10, image: require('./images/Butterfly.png'), text: 'Lower Body' , screen: 'HipsOptions'},
+    { id: 2, image: require('./images/Downward-Dog.png'), text: 'Lower Back' , screen: 'LowerBackOptions'},
+    { id: 3, image: require('./images/Hurdler.png'), text: 'Hamstrings' , screen: 'HamstringsOptions'},
+    { id: 4, image: require('./images/Kneeling-Quad.png'), text: 'Quadriceps' , screen: 'QuadricepsOptions'},
+    { id: 5, image: require('./images/Cow-Face.png'), text: 'Upper Body' , screen: 'UpperBodyOptions'},
+    { id: 6, image: require('./images/Reverse-Shoulder.png'), text: 'Shoulders' , screen: 'ShouldersOptions'},
+    { id: 7, image: require('./images/Chin-Retractions.png'), text: 'Neck' , screen: 'NeckOptions'},
+    { id: 8, image: require('./images/Wall-Dog.png'), text: 'Posture' , screen: 'PostureOptions'},
+    { id: 9, image: require('./images/Chest-Opener.png'), text: 'Chest' , screen: 'ChestOptions'},
+    { id: 10, image: require('./images/Side-Lunge.png'), text: 'Lower Body' , screen: 'LowerBodyOptions'},
   ];
 
   return (
@@ -236,16 +237,6 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.BBAtitle}>BROWSE BY AREA</Text>
           <BBAScroll/>
         </View>
-        <View style={styles.container}>
-          <Text>Welcome Home!</Text>
-          <TextInput
-            style={styles.input}
-            value={number}
-            onChangeText={setNumber}
-            keyboardType="numeric"
-          />
-          <Button title="Save Number" onPress={handleSave} />
-        </View>
       </ScrollView>
       <View style={styles.footer}>
         <TouchableOpacity style={styles.homeButton}>
@@ -281,7 +272,8 @@ const styles = StyleSheet.create({
   },
   dateContainer: {
     marginTop: RPH(4),
-    marginLeft: RPW(30)
+    position: 'absolute',
+    right: RPH(2),
   },
   weekdayText: {
     fontSize: 24,
@@ -337,13 +329,14 @@ const styles = StyleSheet.create({
     marginLeft: RPW(8)
   },
   suggestionsImage: {
-    marginTop: RPH(0),
+    marginTop: RPH(-10),
     width: '100%',
-    height: '55%',
+    height: '100%',
   },
   browseArea: {
     width: RPW(100),
     height: RPH(35),
+    marginBottom: 50,
   },
   BBAtitle: {
     marginLeft: RPW(5),
@@ -378,6 +371,7 @@ const styles = StyleSheet.create({
   BBAimage: {
     width: '100%',
     height: RPH(7),
+    borderRadius: 30,
   },
   BBAtext: {
     textAlign: 'center',
